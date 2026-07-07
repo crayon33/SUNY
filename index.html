@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUNY GOLF &amp; GND · 레저 부동산 개발·분양·컨설팅 전문</title>
+<meta name="description" content="골프장 · 리조트 · 호텔 · 콘도 · 요트 등 레저 부동산 개발·분양·컨설팅 전문 기업. 20년 이상의 레저 마케팅 경험과 글로벌 브랜드 네트워크를 갖춘 SUNY GOLF & SUNY GND.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --accent:#3f7fc4;--accent-lite:#7db3e0;--accent-ink:#2c6bb0;--stat-size:70px;
+    --surface:#ffffff;--surface2:#f5f6f8;--surface3:#eef0f3;
+    --ink:#122a41;--ink-body:#4a545f;--ink-soft:#6b7683;--ink-mute:#8b95a1;
+    --card:#ffffff;--border:#e6e9ee;--hairline:#e2e5ea;--head-accent:#1c3a5a;
+    --track:#eaedf1;--badge-bg:#e7f0fa;--badge-ink:#2c6bb0;
+    --logo-bg:#ffffff;--logo-ink:#aab1bb;--stripe1:#e9ecf1;--stripe2:#eef1f5;
+    --h1:64px;--h2big:38px;--hero-align:left;--hero-ml:0;--hero-mr:0;--hero-just:flex-start;
+    --decor-op:1;--btn-bg:var(--accent);--btn-fg:#fff;--btn-bd:transparent;
+    --radius:2px;--radius-card:4px;--pcols:6;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--surface);font-family:"Pretendard",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  .nav-link{cursor:pointer;transition:color .15s}
+  .nav-link:hover{color:#fff}
+  .foot-link{cursor:pointer;transition:color .15s}
+  .foot-link:hover{color:#fff}
+  .tab-btn{transition:all .15s}
+  .cta-solid{transition:filter .15s,transform .15s}
+  .cta-solid:hover{filter:brightness(1.08)}
+  .cta-outline{transition:background .15s}
+  .cta-outline:hover{background:rgba(255,255,255,.08)}
+  .proj-card{transition:box-shadow .2s,transform .2s}
+  .proj-card:hover{box-shadow:0 14px 34px rgba(18,42,65,.12);transform:translateY(-3px)}
+  input:focus,select:focus,textarea:focus{border-color:var(--accent) !important;box-shadow:0 0 0 3px rgba(63,127,196,.12)}
+
+  /* ===== Responsive ===== */
+  @media (max-width:900px){
+    .sec{padding-left:24px !important;padding-right:24px !important}
+    .hero-pad{padding:64px 24px 72px !important}
+    .nav-menu{display:none !important}
+    .g2,.g3,.g4,.cta-grid{grid-template-columns:1fr !important;gap:36px !important}
+    .stat-cell{border-left:none !important;padding:0 !important;border-top:1px solid rgba(255,255,255,.14);padding-top:22px !important}
+    .stat-cell:first-child{border-top:none;padding-top:0 !important}
+    :root{--h1:38px;--h2big:28px;--stat-size:48px}
+    .pgrid{grid-template-columns:repeat(3,1fr) !important}
+    .form-2{grid-template-columns:1fr !important}
+  }
+  @media (max-width:560px){
+    .pgrid{grid-template-columns:repeat(2,1fr) !important}
+    .nav-bar{padding:20px 24px !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header style="position:relative;background:linear-gradient(158deg,#0c1826 0%,#152840 52%,#1c3a5a 100%);color:#fff;overflow:hidden">
+  <div style="position:absolute;right:-140px;top:-120px;width:520px;height:520px;border:1px solid rgba(125,179,224,.18);border-radius:50%;opacity:var(--decor-op)"></div>
+  <div style="position:absolute;right:-40px;top:20px;width:340px;height:340px;border:1px solid rgba(125,179,224,.12);border-radius:50%;opacity:var(--decor-op)"></div>
+  <div style="position:absolute;right:70px;top:150px;width:150px;height:150px;background:radial-gradient(circle,rgba(91,155,213,.35),transparent 70%);opacity:var(--decor-op)"></div>
+  <div class="nav-bar" style="display:flex;align-items:center;justify-content:space-between;padding:26px 48px;position:relative;z-index:2;border-bottom:1px solid rgba(255,255,255,.08)">
+    <div style="font-weight:800;letter-spacing:.04em;font-size:19px">SUNY GOLF<span style="color:var(--accent-lite);font-weight:600"> &amp; </span>GND</div>
+    <nav class="nav-menu" style="display:flex;gap:38px;font-size:14px;color:rgba(255,255,255,.72);font-weight:500">
+      <a class="nav-link" href="#about">회사소개</a>
+      <a class="nav-link" href="#stats">기업 역량</a>
+      <a class="nav-link" href="#completed">수행 프로젝트</a>
+      <a class="nav-link" href="#ongoing">브랜드 런칭</a>
+    </nav>
+    <a href="#contact" style="border:1px solid rgba(255,255,255,.42);border-radius:2px;padding:9px 20px;font-size:13px;font-weight:600">상담 신청</a>
+  </div>
+  <div class="hero-pad" style="padding:100px 48px 108px;position:relative;z-index:2;max-width:860px;text-align:var(--hero-align);margin-left:var(--hero-ml);margin-right:var(--hero-mr)">
+    <div style="font-size:13px;letter-spacing:.2em;color:var(--accent-lite);font-weight:600;margin-bottom:28px">LEISURE REAL ESTATE SPECIALIST · SINCE 2011</div>
+    <h1 style="font-size:var(--h1);line-height:1.16;font-weight:800;margin:0;letter-spacing:-.025em">레저 자산의 가치를,<br>끝까지 책임집니다</h1>
+    <p style="font-size:19px;line-height:1.7;color:rgba(255,255,255,.7);margin:32px 0 40px;font-weight:400">골프장 · 리조트 · 호텔 · 콘도 · 요트 전문 개발·분양·컨설팅<br>20년 이상의 레저 마케팅으로 증명한 신뢰</p>
+    <div style="display:flex;gap:14px;justify-content:var(--hero-just);flex-wrap:wrap">
+      <a href="#contact" class="cta-solid" style="background:var(--btn-bg);color:var(--btn-fg);border:1px solid var(--btn-bd);padding:15px 32px;font-size:15px;font-weight:700;border-radius:var(--radius)">무료 상담 신청</a>
+      <a href="#completed" class="cta-outline" style="border:1px solid rgba(255,255,255,.35);color:#fff;padding:15px 32px;font-size:15px;font-weight:600;border-radius:var(--radius)">수행 실적 보기</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 회사소개 / 인사말 ===== -->
+<section id="about" class="sec" style="background:var(--surface);padding:96px 48px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:52px">
+    <span style="width:7px;height:7px;background:var(--head-accent);display:inline-block"></span>
+    <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--head-accent);margin:0">회사소개 · GREETINGS</h2>
+  </div>
+  <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+    <div>
+      <div style="font-size:var(--h2big);line-height:1.4;font-weight:800;color:var(--ink);letter-spacing:-.02em">레저 부동산의 <span style="color:var(--accent-ink)">기준</span>을<br>만들어온 20년</div>
+      <div style="margin-top:40px;height:1px;background:var(--hairline)"></div>
+      <div style="margin-top:28px;display:flex;gap:40px;flex-wrap:wrap">
+        <div><div style="font-size:13px;color:var(--ink-mute);font-weight:600;margin-bottom:8px">써니골프 · 2015</div><div style="font-size:20px;font-weight:700;color:var(--ink)">대표 민현선</div></div>
+        <div><div style="font-size:13px;color:var(--ink-mute);font-weight:600;margin-bottom:8px">써니지앤디 · 2011</div><div style="font-size:20px;font-weight:700;color:var(--ink)">대표 문종국</div></div>
+      </div>
+    </div>
+    <div style="font-size:17px;line-height:1.9;color:var(--ink-body);font-weight:400">
+      <p style="margin:0 0 22px">SUNY GOLF &amp; SUNY GND는 아파트·오피스텔·상가가 아닌 <strong style="color:var(--ink);font-weight:700">골프장 · 리조트 · 호텔 · 콘도 · 요트 등 레저 부동산</strong>만을 연구하고 개발하는 전문 기업입니다.</p>
+      <p style="margin:0 0 22px">글로벌 브랜드 유치·협상 컨설팅부터 신규 사업지 개발 자문, 사업타당성 조사, 설계·건설·분양, 자금 조달과 마케팅까지 레저 부동산의 전 과정을 책임집니다.</p>
+      <p style="margin:0">20년 이상 축적한 레저 마케팅 경험과 데이터베이스, 그리고 사업주와의 긴밀한 커뮤니케이션으로 신뢰할 수 있는 결과를 만들어 왔습니다. 앞으로도 레저 부동산의 기준이 되겠습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 기업 역량 (navy band, count-up) ===== -->
+<section id="stats" class="sec" style="background:linear-gradient(158deg,#0c1826 0%,#152840 60%,#1b3757 100%);color:#fff;padding:84px 48px;position:relative;overflow:hidden">
+  <div style="position:absolute;left:-120px;bottom:-160px;width:420px;height:420px;border:1px solid rgba(125,179,224,.12);border-radius:50%;opacity:var(--decor-op)"></div>
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:56px;position:relative;z-index:2">
+    <span style="width:7px;height:7px;background:var(--accent-lite);display:inline-block"></span>
+    <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--accent-lite);margin:0">기업 역량 · CAPABILITY</h2>
+  </div>
+  <div class="g4" style="display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2">
+    <div class="stat-cell" style="padding:0 34px;border-left:1px solid rgba(255,255,255,.14)">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">레저 마케팅 경력</div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1"><span data-stat="a" style="font-size:var(--stat-size)">0</span><span style="font-size:26px;font-weight:700;margin-left:5px;color:#8fc0ea">년+</span></div>
+    </div>
+    <div class="stat-cell" style="padding:0 34px;border-left:1px solid rgba(255,255,255,.14)">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">수행 골프장·리조트</div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1"><span data-stat="b" style="font-size:var(--stat-size)">0</span><span style="font-size:26px;font-weight:700;margin-left:5px;color:#8fc0ea">여 곳</span></div>
+    </div>
+    <div class="stat-cell" style="padding:0 34px;border-left:1px solid rgba(255,255,255,.14)">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">대표 수행 프로젝트</div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1"><span data-stat="c" style="font-size:var(--stat-size)">0</span><span style="font-size:26px;font-weight:700;margin-left:5px;color:#8fc0ea">건+</span></div>
+    </div>
+    <div class="stat-cell" style="padding:0 34px;border-left:1px solid rgba(255,255,255,.14)">
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">글로벌 협력 브랜드</div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;color:#8fc0ea"><span data-stat="d" style="font-size:var(--stat-size)">0</span><span style="font-size:26px;font-weight:700;margin-left:2px">여 개</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 협력사 ===== -->
+<section class="sec" style="background:var(--surface2);padding:84px 48px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+    <span style="width:7px;height:7px;background:var(--head-accent);display:inline-block"></span>
+    <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--head-accent);margin:0">협력사 · PARTNERS</h2>
+  </div>
+  <p style="font-size:16px;color:var(--ink-soft);margin:0 0 40px;max-width:620px;line-height:1.7">반얀트리 그룹, 희림종합건축사사무소 등 국내외 건설·설계·운영·금융 파트너와 글로벌 호텔·리조트 브랜드가 함께하는 신뢰 기반의 네트워크를 구축하고 있습니다.</p>
+  <div id="partners" class="pgrid" style="display:grid;grid-template-columns:repeat(var(--pcols),1fr);gap:14px"></div>
+</section>
+
+<!-- ===== 프로젝트 수행 (완료, 필터) ===== -->
+<section id="completed" class="sec" style="background:var(--surface);padding:88px 48px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:20px">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <span style="width:7px;height:7px;background:var(--head-accent);display:inline-block"></span>
+        <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--head-accent);margin:0">프로젝트 수행 · COMPLETED</h2>
+      </div>
+      <div style="font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-.02em">성공적으로 완수한 대표 프로젝트</div>
+    </div>
+    <div id="proj-tabs" style="display:flex;gap:10px;flex-wrap:wrap"></div>
+  </div>
+  <div id="proj-grid" class="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px"></div>
+</section>
+
+<!-- ===== 브랜드 런칭 ===== -->
+<section id="ongoing" class="sec" style="background:var(--surface3);padding:88px 48px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+    <span style="width:7px;height:7px;background:var(--head-accent);display:inline-block"></span>
+    <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--head-accent);margin:0">브랜드 런칭 · BRAND LAUNCH</h2>
+  </div>
+  <div style="font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:12px">프리미엄 시니어·레지던스 브랜드를 런칭합니다</div>
+  <p style="font-size:16px;color:var(--ink-soft);margin:0 0 40px;max-width:640px;line-height:1.7">글로벌·프리미엄 국내 브랜드의 신규 런칭과 리브랜딩을 주도하며, 국내에 없던 새로운 시니어 라이프와 주거 문화를 설계하고 있습니다.</p>
+  <div class="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);padding:30px 30px 30px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
+        <span style="background:var(--badge-bg);color:var(--badge-ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius)">시니어 복합단지</span>
+        <span style="font-size:12px;color:var(--ink-mute);font-weight:600">분양중</span>
+      </div>
+      <div style="font-size:21px;font-weight:800;color:var(--ink);margin-bottom:6px">라우어 (LHOUR)</div>
+      <div style="font-size:13px;color:var(--ink-mute);margin-bottom:26px;line-height:1.6">프리미엄 시니어 복합단지<br>부산 기장 오시리아 관광단지</div>
+      <div style="display:flex;gap:14px;padding-top:22px;border-top:1px solid var(--hairline)">
+        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">규모</div><div style="font-size:15px;font-weight:700;color:var(--ink)">지하4~지상18층</div></div>
+        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">연면적</div><div style="font-size:15px;font-weight:700;color:var(--ink)">약 199,716㎡</div></div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);padding:30px 30px 30px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
+        <span style="background:var(--badge-bg);color:var(--badge-ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius)">시니어 레지던스</span>
+        <span style="font-size:12px;color:var(--ink-mute);font-weight:600">입주 2025</span>
+      </div>
+      <div style="font-size:21px;font-weight:800;color:var(--ink);margin-bottom:6px">VL 르웨스트</div>
+      <div style="font-size:13px;color:var(--ink-mute);margin-bottom:26px;line-height:1.6">롯데호텔 프리미엄 시니어 레지던스<br>서울 강서 마곡</div>
+      <div style="display:flex;gap:14px;padding-top:22px;border-top:1px solid var(--hairline)">
+        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">규모</div><div style="font-size:15px;font-weight:700;color:var(--ink)">지하6~지상15층</div></div>
+        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">세대수</div><div style="font-size:15px;font-weight:700;color:var(--ink)">총 810세대</div></div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);padding:30px 30px 30px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
+        <span style="background:#eaf3ec;color:#2c7a4b;font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius)">세대공존형</span>
+        <span style="font-size:12px;color:var(--ink-mute);font-weight:600">런칭</span>
+      </div>
+      <div style="font-size:21px;font-weight:800;color:var(--ink);margin-bottom:6px">백운호수 푸르지오 숲속의 아침</div>
+      <div style="font-size:13px;color:var(--ink-mute);margin-bottom:26px;line-height:1.6">3대 세대공존형 주거단지<br>경기 의왕 백운밸리</div>
+      <div style="display:flex;gap:14px;padding-top:22px;border-top:1px solid var(--hairline)">
+        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">구성</div><div style="font-size:15px;font-weight:700;color:var(--ink)">1·2단지</div></div>
+        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">세대수</div><div style="font-size:15px;font-weight:700;color:var(--ink)">총 1,378세대</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 상담 신청 (navy) ===== -->
+<section id="contact" class="sec" style="background:linear-gradient(158deg,#0c1826 0%,#152840 60%,#1b3757 100%);color:#fff;padding:88px 48px;position:relative;overflow:hidden">
+  <div style="position:absolute;right:-140px;top:-120px;width:480px;height:480px;border:1px solid rgba(125,179,224,.14);border-radius:50%;opacity:var(--decor-op)"></div>
+  <div class="cta-grid" style="display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;position:relative;z-index:2">
+    <div>
+      <div style="font-size:13px;letter-spacing:.2em;color:#7db3e0;font-weight:600;margin-bottom:22px">CONTACT · 상담 신청</div>
+      <div style="font-size:40px;font-weight:800;line-height:1.3;letter-spacing:-.02em;margin-bottom:24px">분양, 어디서부터<br>시작할지 막막하신가요?</div>
+      <p style="font-size:17px;line-height:1.8;color:rgba(255,255,255,.68);margin:0 0 36px">프로젝트 규모와 목표만 알려주시면 전문 컨설턴트가 1:1 무료 상담을 도와드립니다.</p>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:14px"><span style="width:34px;height:34px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:15px">☎</span><div><div style="font-size:12px;color:rgba(255,255,255,.55)">대표전화</div><div style="font-size:18px;font-weight:700">02-2052-0001</div></div></div>
+        <div style="display:flex;align-items:center;gap:14px"><span style="width:34px;height:34px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:15px">✉</span><div><div style="font-size:12px;color:rgba(255,255,255,.55)">이메일</div><div style="font-size:18px;font-weight:700">suny_golf@naver.com</div></div></div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:6px;padding:38px 36px">
+      <form id="contact-form" novalidate>
+        <div class="form-2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+          <div><div style="font-size:13px;font-weight:600;color:#4a545f;margin-bottom:8px">이름 <span style="color:#c0392b">*</span></div><input id="suny-name" type="text" placeholder="홍길동" style="width:100%;border:1px solid #d4d9e0;border-radius:var(--radius);padding:13px 14px;font-size:15px;font-family:inherit;color:#122a41;outline:none"></div>
+          <div><div style="font-size:13px;font-weight:600;color:#4a545f;margin-bottom:8px">연락처 <span style="color:#c0392b">*</span></div><input id="suny-phone" type="tel" placeholder="010-0000-0000" style="width:100%;border:1px solid #d4d9e0;border-radius:var(--radius);padding:13px 14px;font-size:15px;font-family:inherit;color:#122a41;outline:none"></div>
+        </div>
+        <div style="margin-bottom:16px"><div style="font-size:13px;font-weight:600;color:#4a545f;margin-bottom:8px">문의 유형</div><select id="suny-type" style="width:100%;border:1px solid #d4d9e0;border-radius:var(--radius);padding:13px 14px;font-size:15px;font-family:inherit;color:#122a41;outline:none;background:#fff"><option>골프장 회원권 분양</option><option>호텔·리조트 분양 대행</option><option>글로벌 브랜드 유치·컨설팅</option><option>신규 사업지 개발 자문</option><option>기타 문의</option></select></div>
+        <div style="margin-bottom:20px"><div style="font-size:13px;font-weight:600;color:#4a545f;margin-bottom:8px">문의 내용</div><textarea id="suny-msg" rows="3" placeholder="프로젝트 규모 · 위치 · 희망 사항을 알려주세요" style="width:100%;border:1px solid #d4d9e0;border-radius:var(--radius);padding:13px 14px;font-size:15px;font-family:inherit;color:#122a41;outline:none;resize:none"></textarea></div>
+        <div id="form-error" style="display:none;font-size:13px;color:#c0392b;margin-bottom:14px;font-weight:600">이름과 연락처를 입력해 주세요.</div>
+        <button type="submit" style="width:100%;background:#122a41;color:#fff;border:none;border-radius:var(--radius);padding:16px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer">무료 상담 신청하기</button>
+        <div style="text-align:center;margin-top:14px;font-size:12px;color:#98a1ac">제출 시 개인정보 수집·이용에 동의하는 것으로 간주됩니다.</div>
+      </form>
+      <div id="form-success" style="display:none;text-align:center;padding:48px 12px">
+        <div style="width:60px;height:60px;background:#eaf3ec;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:28px;color:#2c7a4b;margin-bottom:24px">✓</div>
+        <div style="font-size:24px;font-weight:800;color:#122a41;margin-bottom:12px">상담 신청이 접수되었습니다</div>
+        <div style="font-size:15px;color:#6b7683;line-height:1.7">담당 컨설턴트가 영업일 기준 24시간 이내<br>입력하신 연락처로 연락드리겠습니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background:#081019;color:rgba(255,255,255,.6);padding:52px 48px 44px">
+  <div class="sec" style="padding:0;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08)">
+    <div>
+      <div style="font-weight:800;font-size:18px;color:#fff;letter-spacing:.04em;margin-bottom:14px">SUNY GOLF<span style="color:#6ba8de;font-weight:600"> &amp; </span>GND</div>
+      <div style="font-size:13px;line-height:1.9">서울특별시 송파구 송파대로 201, 송파테라타워2 A동 502호 (우 05854)<br>㈜써니골프 793-87-00044 &nbsp;|&nbsp; ㈜써니지앤디 612-81-37105 &nbsp;|&nbsp; 대표 민현선 · 문종국<br>TEL 02-2052-0001 &nbsp;|&nbsp; FAX 0303-3441-3858 &nbsp;|&nbsp; suny_golf@naver.com &nbsp;|&nbsp; www.sunygolf.co.kr · www.sunygnd.com</div>
+    </div>
+    <div style="display:flex;gap:28px;font-size:13px;color:rgba(255,255,255,.72);font-weight:500">
+      <a class="foot-link" href="#about">회사소개</a>
+      <a class="foot-link" href="#stats">기업 역량</a>
+      <a class="foot-link" href="#completed">수행 프로젝트</a>
+      <a class="foot-link" href="#contact">상담 신청</a>
+    </div>
+  </div>
+  <div style="padding-top:22px;font-size:12px;color:rgba(255,255,255,.4)">© 2026 SUNY GOLF &amp; GND. All rights reserved.</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 협력사 로고 (글로벌 브랜드·파트너) ---------- */
+  var partners = document.getElementById('partners');
+  var partnerNames = [
+    'BANYAN TREE', 'ANGSANA', 'CASSIA', 'CLUB MED',
+    'AMAN', 'MARRIOTT', 'HILTON', 'HYATT',
+    'IHG', 'ACCOR', 'SIGNIEL', 'SONO'
+  ];
+  var logoStyle = 'height:64px;background:var(--logo-bg);border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font:600 12px "Pretendard",system-ui,sans-serif;color:var(--ink-soft);letter-spacing:.06em;text-align:center;padding:0 8px';
+  partnerNames.forEach(function(nm){
+    var cell = document.createElement('div');
+    cell.setAttribute('style', logoStyle);
+    cell.textContent = nm;
+    partners.appendChild(cell);
+  });
+
+  /* ---------- 수행 프로젝트: 탭 필터 ---------- */
+  var allProjects = [
+    { title:'용평리조트',            cat:'리조트', meta:'분양 대행 · 강원 평창',   img:'YONGPYONG' },
+    { title:'반얀트리 카시아 속초',   cat:'리조트', meta:'브랜드 런칭·분양 · 강원 속초', img:'BANYAN TREE' },
+    { title:'라오스 탓루앙 레이크 SEZ', cat:'리조트', meta:'해외 개발 자문 · 라오스',  img:'LAOS SEZ' },
+    { title:'롯데 리조트 속초',       cat:'호텔',   meta:'분양 대행 · 강원 속초',   img:'LOTTE SOKCHO' },
+    { title:'신세계 조선 호텔',       cat:'호텔',   meta:'글로벌 브랜드 컨설팅',    img:'CHOSUN' },
+    { title:'신라 모노그램 호텔',     cat:'호텔',   meta:'브랜드 런칭',           img:'SHILLA' },
+    { title:'카스카디아',            cat:'골프장', meta:'회원권 분양',           img:'CASCADIA' },
+    { title:'썬밸리',                cat:'골프장', meta:'회원권 분양',           img:'SUN VALLEY' },
+    { title:'벨라45',                cat:'골프장', meta:'회원권 분양',           img:'BELLA45' }
+  ];
+  var tabs = ['전체','골프장','리조트','호텔'];
+  var activeTab = '전체';
+  var tabsEl = document.getElementById('proj-tabs');
+  var gridEl = document.getElementById('proj-grid');
+
+  var stem = 'padding:10px 22px;font-size:14px;font-weight:600;border-radius:var(--radius);cursor:pointer;font-family:inherit;';
+  var baseTab = stem + 'border:1px solid var(--border);background:var(--card);color:var(--ink-soft)';
+  var activeTabStyle = stem + 'border:1px solid var(--accent);background:var(--accent);color:#fff';
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function renderTabs(){
+    tabsEl.innerHTML = '';
+    tabs.forEach(function(t){
+      var b = document.createElement('button');
+      b.className = 'tab-btn';
+      b.type = 'button';
+      b.textContent = t;
+      b.setAttribute('style', t === activeTab ? activeTabStyle : baseTab);
+      b.addEventListener('click', function(){ activeTab = t; renderTabs(); renderGrid(); });
+      tabsEl.appendChild(b);
+    });
+  }
+
+  function renderGrid(){
+    var list = activeTab === '전체' ? allProjects : allProjects.filter(function(p){ return p.cat === activeTab; });
+    gridEl.innerHTML = list.map(function(p){
+      return '<div class="proj-card" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);overflow:hidden">' +
+          '<div style="height:172px;background:repeating-linear-gradient(135deg,var(--stripe1),var(--stripe1) 11px,var(--stripe2) 11px,var(--stripe2) 22px);display:flex;align-items:center;justify-content:center;position:relative">' +
+            '<span style="font:600 11px ui-monospace,monospace;color:var(--ink-mute);letter-spacing:.1em">' + esc(p.img) + '</span>' +
+            '<span style="position:absolute;top:12px;left:12px;background:#122a41;color:#fff;font-size:11px;font-weight:600;padding:4px 11px;border-radius:var(--radius)">' + esc(p.cat) + '</span>' +
+          '</div>' +
+          '<div style="padding:22px 22px 24px">' +
+            '<div style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:9px;letter-spacing:-.01em">' + esc(p.title) + '</div>' +
+            '<div style="font-size:13px;color:var(--ink-mute)">' + esc(p.meta) + '</div>' +
+          '</div>' +
+        '</div>';
+    }).join('');
+  }
+  renderTabs();
+  renderGrid();
+
+  /* ---------- 기업 역량: 카운트업 (뷰포트 진입 시) ---------- */
+  var targets = { a:20, b:40, c:13, d:20 };
+  var els = {
+    a: document.querySelector('[data-stat="a"]'),
+    b: document.querySelector('[data-stat="b"]'),
+    c: document.querySelector('[data-stat="c"]'),
+    d: document.querySelector('[data-stat="d"]')
+  };
+  var counted = false;
+  function runCount(){
+    if (counted) return; counted = true;
+    var dur = 1500, t0 = performance.now();
+    function tick(now){
+      var p = Math.min(1, (now - t0) / dur);
+      var e = 1 - Math.pow(1 - p, 3);
+      els.a.textContent = Math.round(targets.a * e);
+      els.b.textContent = Math.round(targets.b * e);
+      els.c.textContent = Math.round(targets.c * e);
+      els.d.textContent = Math.round(targets.d * e);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var statsSection = document.getElementById('stats');
+  if (!statsSection || typeof IntersectionObserver === 'undefined') {
+    runCount();
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { runCount(); io.disconnect(); } });
+    }, { threshold: 0.35 });
+    io.observe(statsSection);
+  }
+
+  /* ---------- 상담 신청 폼 ---------- */
+  var form = document.getElementById('contact-form');
+  var errEl = document.getElementById('form-error');
+  var successEl = document.getElementById('form-success');
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var name = (document.getElementById('suny-name').value || '').trim();
+    var phone = (document.getElementById('suny-phone').value || '').trim();
+    if (!name || !phone) { errEl.style.display = 'block'; return; }
+    errEl.style.display = 'none';
+    form.style.display = 'none';
+    successEl.style.display = 'block';
+  });
+})();
+</script>
+</body>
+</html>
