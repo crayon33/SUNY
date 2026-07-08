@@ -49,7 +49,7 @@
   @media (max-width:760px){
     .nav-menu{display:none !important}
     .stat-cell{border-left:none !important;padding:0 !important;border-top:1px solid rgba(255,255,255,.14);padding-top:22px !important}
-    .stat-cell:first-child{border-top:none;padding-top:0 !important}
+    .stat-cell:nth-child(-n+2){border-top:none;padding-top:0 !important}
     :root{--stat-size:52px}
   }
 </style>
@@ -73,8 +73,8 @@
   </div>
   <div class="hero-pad" style="padding:clamp(64px,10vw,100px) clamp(22px,5vw,48px) clamp(72px,11vw,108px);position:relative;z-index:2;max-width:860px;text-align:var(--hero-align);margin-left:var(--hero-ml);margin-right:var(--hero-mr)">
     <div style="font-size:13px;letter-spacing:.2em;color:var(--accent-lite);font-weight:600;margin-bottom:28px">FAITH AND CONVICTION · SINCE 2011</div>
-    <h1 style="font-size:clamp(34px,7vw,var(--h1));line-height:1.16;font-weight:800;margin:0;letter-spacing:-.025em">당신의 선택이 옳았음을,<br>결과로 증명하겠습니다</h1>
-    <p style="font-size:19px;line-height:1.7;color:rgba(255,255,255,.7);margin:32px 0 40px;font-weight:400">골프장 · 리조트 · 호텔 · 시니어 레지던스<br>개발부터 분양까지, 전 과정을 함께하는 레저 부동산 파트너입니다.</p>
+    <h1 style="font-size:clamp(29px,7vw,var(--h1));line-height:1.16;font-weight:800;margin:0;letter-spacing:-.025em">당신의 선택이 옳았음을,<br>결과로 증명하겠습니다</h1>
+    <p style="font-size:clamp(15px,4.2vw,19px);line-height:1.7;color:rgba(255,255,255,.7);margin:28px 0 36px;font-weight:400">골프장 · 리조트 · 호텔 · 시니어 레지던스<br>개발부터 분양까지, 전 과정을 함께하는 레저 부동산 파트너입니다.</p>
     <div style="display:flex;gap:14px;justify-content:var(--hero-just);flex-wrap:wrap">
       <a href="#contact" class="cta-solid" style="background:var(--btn-bg);color:var(--btn-fg);border:1px solid var(--btn-bd);padding:15px 32px;font-size:15px;font-weight:700;border-radius:var(--radius)">프로젝트 상담</a>
       <a href="#completed" class="cta-outline" style="border:1px solid rgba(255,255,255,.35);color:#fff;padding:15px 32px;font-size:15px;font-weight:600;border-radius:var(--radius)">수행 프로젝트</a>
@@ -90,14 +90,14 @@
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,72px);align-items:start">
     <div>
-      <div style="font-size:clamp(25px,2.9vw,33px);line-height:1.5;font-weight:800;color:var(--ink);letter-spacing:-.02em">수년의 개발이,<br><span style="color:var(--accent-ink)">몇 달의 분양</span>에서 결정됩니다.<br>저희는 그 무게를 아는 회사입니다.</div>
+      <div style="font-size:clamp(21px,2.9vw,33px);line-height:1.5;font-weight:800;color:var(--ink);letter-spacing:-.02em">수년의 개발이,<br><span style="color:var(--accent-ink)">몇 달의 분양</span>에서 결정됩니다.<br>저희는 그 무게를 아는 회사입니다.</div>
       <div style="margin-top:40px;height:1px;background:var(--hairline)"></div>
       <div style="margin-top:28px">
         <div style="font-size:13px;color:var(--ink-mute);font-weight:600;margin-bottom:8px">㈜써니지앤디 2011 &nbsp;·&nbsp; ㈜써니골프 2015</div>
         <div style="font-size:20px;font-weight:700;color:var(--ink)">대표 민현선</div>
       </div>
     </div>
-    <div style="font-size:17px;line-height:1.9;color:var(--ink-body);font-weight:400">
+    <div style="font-size:clamp(15px,2.1vw,17px);line-height:1.9;color:var(--ink-body);font-weight:400">
       <p style="margin:0 0 22px">SUNY GOLF &amp; GND는 <strong style="color:var(--ink);font-weight:700">골프장, 리조트, 호텔, 시니어 레지던스에 이르는 레저 부동산</strong>의 개발과 분양을 수행하는 전문 기업입니다. 법인의 역사는 2011년에 시작됐지만, 그 뿌리는 대표와 조직이 레저 부동산 현장에서 쌓아온 20년의 경험입니다.</p>
       <p style="margin:0 0 22px">휴식과 여가가 삶의 중심이 되는 시대 — 그 시간을 담는 공간에는 다른 깊이의 전문성이 필요하다고 믿습니다. 사업 검토부터 브랜드 유치, 분양, 계약 관리까지 전 과정을 하나의 조직이 책임지는 이유입니다.</p>
       <p style="margin:0">앞으로도 레저 부동산의 기준이 되겠습니다.</p>
@@ -115,19 +115,19 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));row-gap:36px;position:relative;z-index:2">
     <div class="stat-cell" style="padding:0 clamp(16px,3vw,34px);border-left:1px solid rgba(255,255,255,.14)">
       <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">레저 마케팅 경력</div>
-      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="a" style="font-size:clamp(44px,7vw,var(--stat-size))">0</span><span style="font-size:24px;font-weight:700;margin-left:6px;color:#8fc0ea">년+</span></div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="a" style="font-size:clamp(34px,6.5vw,var(--stat-size))">0</span><span style="font-size:clamp(16px,3vw,24px);font-weight:700;margin-left:6px;color:#8fc0ea">년+</span></div>
     </div>
     <div class="stat-cell" style="padding:0 clamp(16px,3vw,34px);border-left:1px solid rgba(255,255,255,.14)">
       <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">수행 골프장</div>
-      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="b" style="font-size:clamp(44px,7vw,var(--stat-size))">0</span><span style="font-size:24px;font-weight:700;margin-left:6px;color:#8fc0ea">곳</span></div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="b" style="font-size:clamp(34px,6.5vw,var(--stat-size))">0</span><span style="font-size:clamp(16px,3vw,24px);font-weight:700;margin-left:6px;color:#8fc0ea">곳</span></div>
     </div>
     <div class="stat-cell" style="padding:0 clamp(16px,3vw,34px);border-left:1px solid rgba(255,255,255,.14)">
       <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">호텔·리조트 프로젝트</div>
-      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="c" style="font-size:clamp(44px,7vw,var(--stat-size))">0</span><span style="font-size:24px;font-weight:700;margin-left:6px;color:#8fc0ea">건</span></div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="c" style="font-size:clamp(34px,6.5vw,var(--stat-size))">0</span><span style="font-size:clamp(16px,3vw,24px);font-weight:700;margin-left:6px;color:#8fc0ea">건</span></div>
     </div>
     <div class="stat-cell" style="padding:0 clamp(16px,3vw,34px);border-left:1px solid rgba(255,255,255,.14)">
       <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">글로벌 협력 브랜드</div>
-      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;color:#8fc0ea;white-space:nowrap"><span data-stat="d" style="font-size:clamp(44px,7vw,var(--stat-size))">0</span><span style="font-size:24px;font-weight:700;margin-left:3px">개+</span></div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="d" style="font-size:clamp(34px,6.5vw,var(--stat-size))">0</span><span style="font-size:clamp(16px,3vw,24px);font-weight:700;margin-left:3px;color:#8fc0ea">개+</span></div>
     </div>
   </div>
 </section>
@@ -156,7 +156,7 @@
         <span style="width:7px;height:7px;background:var(--head-accent);display:inline-block"></span>
         <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--head-accent);margin:0">프로젝트 수행 · COMPLETED</h2>
       </div>
-      <div style="font-size:clamp(26px,4.5vw,34px);font-weight:800;color:var(--ink);letter-spacing:-.02em">대표 수행 프로젝트</div>
+      <div style="font-size:clamp(22px,4.5vw,34px);font-weight:800;color:var(--ink);letter-spacing:-.02em">대표 수행 프로젝트</div>
     </div>
     <div id="proj-tabs" style="display:flex;gap:10px;flex-wrap:wrap"></div>
   </div>
@@ -169,7 +169,7 @@
     <span style="width:7px;height:7px;background:var(--head-accent);display:inline-block"></span>
     <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--head-accent);margin:0">진행중인 프로젝트 · ONGOING</h2>
   </div>
-  <div style="font-size:clamp(26px,4.5vw,34px);font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:40px">현재 분양 · 입주 · 런칭 현황</div>
+  <div style="font-size:clamp(22px,4.5vw,34px);font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:40px">현재 분양 · 입주 · 런칭 현황</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px">
     <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);padding:30px 30px 30px">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
@@ -194,8 +194,8 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,64px);align-items:center;position:relative;z-index:2">
     <div>
       <div style="font-size:13px;letter-spacing:.2em;color:#7db3e0;font-weight:600;margin-bottom:22px">CONTACT · 상담 신청</div>
-      <div style="font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.3;letter-spacing:-.02em;margin-bottom:24px">분양, 어디서부터<br>시작할지 막막하신가요?</div>
-      <p style="font-size:17px;line-height:1.8;color:rgba(255,255,255,.68);margin:0 0 36px">프로젝트 규모와 목표만 알려주시면 전문 컨설턴트가 1:1 무료 상담을 도와드립니다.</p>
+      <div style="font-size:clamp(24px,5vw,40px);font-weight:800;line-height:1.3;letter-spacing:-.02em;margin-bottom:24px">분양, 어디서부터<br>시작할지 막막하신가요?</div>
+      <p style="font-size:clamp(15px,2.1vw,17px);line-height:1.8;color:rgba(255,255,255,.68);margin:0 0 36px">프로젝트 규모와 목표만 알려주시면 전문 컨설턴트가 1:1 무료 상담을 도와드립니다.</p>
       <div style="display:flex;flex-direction:column;gap:16px">
         <div style="display:flex;align-items:center;gap:14px"><span style="width:34px;height:34px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:15px">☎</span><div><div style="font-size:12px;color:rgba(255,255,255,.55)">대표전화</div><div style="font-size:18px;font-weight:700">02-2052-0001</div></div></div>
         <div style="display:flex;align-items:center;gap:14px"><span style="width:34px;height:34px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:15px">✉</span><div><div style="font-size:12px;color:rgba(255,255,255,.55)">이메일</div><div style="font-size:18px;font-weight:700">suny_golf@naver.com</div></div></div>
@@ -428,9 +428,9 @@
     c: document.querySelector('[data-stat="c"]'),
     d: document.querySelector('[data-stat="d"]')
   };
-  var counted = false;
+  var counting = false;
   function runCount(){
-    if (counted) return; counted = true;
+    if (counting) return; counting = true;
     var dur = 1500, t0 = performance.now();
     function tick(now){
       var p = Math.min(1, (now - t0) / dur);
@@ -439,17 +439,24 @@
       els.b.textContent = Math.round(targets.b * e);
       els.c.textContent = Math.round(targets.c * e);
       els.d.textContent = Math.round(targets.d * e);
-      if (p < 1) requestAnimationFrame(tick);
+      if (p < 1) { requestAnimationFrame(tick); } else { counting = false; }
     }
     requestAnimationFrame(tick);
+  }
+  function resetCount(){
+    if (counting) return;
+    els.a.textContent = els.b.textContent = els.c.textContent = els.d.textContent = '0';
   }
   var statsSection = document.getElementById('stats');
   if (!statsSection || typeof IntersectionObserver === 'undefined') {
     runCount();
   } else {
+    /* 화면에 들어올 때마다 카운트업 재생, 벗어나면 0으로 리셋 */
     var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if (en.isIntersecting) { runCount(); io.disconnect(); } });
-    }, { threshold: 0.35 });
+      entries.forEach(function(en){
+        if (en.isIntersecting) { runCount(); } else { resetCount(); }
+      });
+    }, { threshold: 0.2 });
     io.observe(statsSection);
   }
 
