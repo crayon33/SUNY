@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 <style>
   :root{
-    --accent:#3f7fc4;--accent-lite:#7db3e0;--accent-ink:#2c6bb0;--stat-size:54px;
+    --accent:#3f7fc4;--accent-lite:#7db3e0;--accent-ink:#2c6bb0;--stat-size:76px;
     --surface:#ffffff;--surface2:#f5f6f8;--surface3:#eef0f3;
     --ink:#122a41;--ink-body:#4a545f;--ink-soft:#6b7683;--ink-mute:#8b95a1;
     --card:#ffffff;--border:#e6e9ee;--hairline:#e2e5ea;--head-accent:#1c3a5a;
@@ -33,6 +33,16 @@
   .cta-outline:hover{background:rgba(255,255,255,.08)}
   .proj-card{transition:box-shadow .2s,transform .2s}
   .proj-card:hover{box-shadow:0 14px 34px rgba(18,42,65,.12);transform:translateY(-3px)}
+
+  /* ===== 협력사 카드 캐러셀 ===== */
+  #partner-track{display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;padding:6px 2px 18px;scrollbar-width:none;-ms-overflow-style:none}
+  #partner-track::-webkit-scrollbar{display:none}
+  .partner-card{flex:none;width:300px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);overflow:hidden;cursor:pointer;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .2s}
+  .partner-card.pshow{opacity:1;transform:translateY(0)}
+  .partner-card.pshow:hover{box-shadow:0 14px 34px rgba(18,42,65,.12);transform:translateY(-3px)}
+  .pbtn{width:40px;height:40px;border-radius:50%;border:none;background:#122a41;color:#fff;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:opacity .15s,filter .15s}
+  .pbtn:hover{filter:brightness(1.25)}
+  .pbtn:disabled{opacity:.35;cursor:default;filter:none}
   input:focus,select:focus,textarea:focus{border-color:var(--accent) !important;box-shadow:0 0 0 3px rgba(63,127,196,.12)}
 
   /* ===== Responsive ===== */
@@ -40,7 +50,7 @@
     .nav-menu{display:none !important}
     .stat-cell{border-left:none !important;padding:0 !important;border-top:1px solid rgba(255,255,255,.14);padding-top:22px !important}
     .stat-cell:first-child{border-top:none;padding-top:0 !important}
-    :root{--stat-size:40px}
+    :root{--stat-size:52px}
   }
 </style>
 </head>
@@ -62,12 +72,12 @@
     <a href="#contact" style="border:1px solid rgba(255,255,255,.42);border-radius:2px;padding:9px 20px;font-size:13px;font-weight:600;white-space:nowrap">상담 신청</a>
   </div>
   <div class="hero-pad" style="padding:clamp(64px,10vw,100px) clamp(22px,5vw,48px) clamp(72px,11vw,108px);position:relative;z-index:2;max-width:860px;text-align:var(--hero-align);margin-left:var(--hero-ml);margin-right:var(--hero-mr)">
-    <div style="font-size:13px;letter-spacing:.12em;color:var(--accent-lite);font-weight:600;margin-bottom:28px">대한민국 레저 부동산의 기준 · SINCE 2011</div>
-    <h1 style="font-size:clamp(34px,7vw,var(--h1));line-height:1.16;font-weight:800;margin:0;letter-spacing:-.025em">머무는 순간이,<br>자산이 됩니다</h1>
-    <p style="font-size:19px;line-height:1.7;color:rgba(255,255,255,.7);margin:32px 0 40px;font-weight:400">골프장 · 리조트 · 호텔 · 시니어 레지던스<br>좋은 공간은 그곳에서 보낸 시간으로 완성됩니다 — 저희는 그 시간을 설계합니다.</p>
+    <div style="font-size:13px;letter-spacing:.2em;color:var(--accent-lite);font-weight:600;margin-bottom:28px">FAITH AND CONVICTION · SINCE 2011</div>
+    <h1 style="font-size:clamp(34px,7vw,var(--h1));line-height:1.16;font-weight:800;margin:0;letter-spacing:-.025em">당신의 선택이 옳았음을,<br>결과로 증명하겠습니다</h1>
+    <p style="font-size:19px;line-height:1.7;color:rgba(255,255,255,.7);margin:32px 0 40px;font-weight:400">골프장 · 리조트 · 호텔 · 시니어 레지던스<br>개발부터 분양까지, 전 과정을 함께하는 레저 부동산 파트너입니다.</p>
     <div style="display:flex;gap:14px;justify-content:var(--hero-just);flex-wrap:wrap">
-      <a href="#contact" class="cta-solid" style="background:var(--btn-bg);color:var(--btn-fg);border:1px solid var(--btn-bd);padding:15px 32px;font-size:15px;font-weight:700;border-radius:var(--radius)">무료 상담 신청</a>
-      <a href="#completed" class="cta-outline" style="border:1px solid rgba(255,255,255,.35);color:#fff;padding:15px 32px;font-size:15px;font-weight:600;border-radius:var(--radius)">수행 실적 보기</a>
+      <a href="#contact" class="cta-solid" style="background:var(--btn-bg);color:var(--btn-fg);border:1px solid var(--btn-bd);padding:15px 32px;font-size:15px;font-weight:700;border-radius:var(--radius)">프로젝트 상담</a>
+      <a href="#completed" class="cta-outline" style="border:1px solid rgba(255,255,255,.35);color:#fff;padding:15px 32px;font-size:15px;font-weight:600;border-radius:var(--radius)">수행 프로젝트</a>
     </div>
   </div>
 </header>
@@ -104,20 +114,20 @@
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));row-gap:36px;position:relative;z-index:2">
     <div class="stat-cell" style="padding:0 clamp(16px,3vw,34px);border-left:1px solid rgba(255,255,255,.14)">
-      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">누적 분양 실적</div>
-      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="a" style="font-size:clamp(32px,5vw,var(--stat-size))">0</span><span style="font-size:19px;font-weight:700;margin-left:5px;color:#8fc0ea">조원</span></div>
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">레저 마케팅 경력</div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="a" style="font-size:clamp(44px,7vw,var(--stat-size))">0</span><span style="font-size:24px;font-weight:700;margin-left:6px;color:#8fc0ea">년+</span></div>
     </div>
     <div class="stat-cell" style="padding:0 clamp(16px,3vw,34px);border-left:1px solid rgba(255,255,255,.14)">
-      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">협력 파트너사</div>
-      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="b" style="font-size:clamp(32px,5vw,var(--stat-size))">0</span><span style="font-size:19px;font-weight:700;margin-left:5px;color:#8fc0ea">개사</span></div>
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">수행 골프장</div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="b" style="font-size:clamp(44px,7vw,var(--stat-size))">0</span><span style="font-size:24px;font-weight:700;margin-left:6px;color:#8fc0ea">곳</span></div>
     </div>
     <div class="stat-cell" style="padding:0 clamp(16px,3vw,34px);border-left:1px solid rgba(255,255,255,.14)">
-      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">수행 프로젝트</div>
-      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="c" style="font-size:clamp(32px,5vw,var(--stat-size))">0</span><span style="font-size:19px;font-weight:700;margin-left:5px;color:#8fc0ea">건+</span></div>
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">호텔·리조트 프로젝트</div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap"><span data-stat="c" style="font-size:clamp(44px,7vw,var(--stat-size))">0</span><span style="font-size:24px;font-weight:700;margin-left:6px;color:#8fc0ea">건</span></div>
     </div>
     <div class="stat-cell" style="padding:0 clamp(16px,3vw,34px);border-left:1px solid rgba(255,255,255,.14)">
-      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">평균 분양 완료율</div>
-      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;color:#8fc0ea;white-space:nowrap"><span data-stat="d" style="font-size:clamp(32px,5vw,var(--stat-size))">0</span><span style="font-size:19px;font-weight:700;margin-left:2px">%</span></div>
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px">글로벌 협력 브랜드</div>
+      <div style="font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;color:#8fc0ea;white-space:nowrap"><span data-stat="d" style="font-size:clamp(44px,7vw,var(--stat-size))">0</span><span style="font-size:24px;font-weight:700;margin-left:3px">개+</span></div>
     </div>
   </div>
 </section>
@@ -128,8 +138,14 @@
     <span style="width:7px;height:7px;background:var(--head-accent);display:inline-block"></span>
     <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--head-accent);margin:0">협력사 · PARTNERS</h2>
   </div>
-  <p style="font-size:16px;color:var(--ink-soft);margin:0 0 40px;max-width:620px;line-height:1.7">반얀트리 그룹, 희림종합건축사사무소 등 국내외 건설·설계·운영·금융 파트너와 글로벌 호텔·리조트 브랜드가 함께하는 신뢰 기반의 네트워크를 구축하고 있습니다.</p>
-  <div id="partners" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px"></div>
+  <p style="font-size:16px;color:var(--ink-soft);margin:0 0 24px;max-width:620px;line-height:1.7">반얀트리 그룹, 희림종합건축사사무소 등 국내외 건설·설계·운영·금융 파트너와 글로벌 호텔·리조트 브랜드가 함께하는 신뢰 기반의 네트워크를 구축하고 있습니다.</p>
+  <div style="position:relative">
+    <div id="partner-track"></div>
+    <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:4px">
+      <button id="partner-prev" class="pbtn" type="button" aria-label="이전">&#8592;</button>
+      <button id="partner-next" class="pbtn" type="button" aria-label="다음">&#8594;</button>
+    </div>
+  </div>
 </section>
 
 <!-- ===== 프로젝트 수행 (완료, 필터) ===== -->
@@ -157,39 +173,17 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px">
     <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);padding:30px 30px 30px">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
-        <span style="background:var(--badge-bg);color:var(--badge-ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius)">시니어 복합단지</span>
-        <span style="font-size:12px;color:var(--ink-mute);font-weight:600">분양중</span>
+        <span style="background:var(--badge-bg);color:var(--badge-ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius)">분양중</span>
       </div>
-      <div style="font-size:21px;font-weight:800;color:var(--ink);margin-bottom:6px">라우어 (LHOUR)</div>
-      <div style="font-size:13px;color:var(--ink-mute);margin-bottom:26px;line-height:1.6">프리미엄 시니어 복합단지<br>부산 기장 오시리아 관광단지</div>
-      <div style="display:flex;gap:14px;padding-top:22px;border-top:1px solid var(--hairline)">
-        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">규모</div><div style="font-size:15px;font-weight:700;color:var(--ink)">지하4~지상18층</div></div>
-        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">연면적</div><div style="font-size:15px;font-weight:700;color:var(--ink)">약 199,716㎡</div></div>
-      </div>
+      <div style="font-size:21px;font-weight:800;color:var(--ink);margin-bottom:6px">코스타밸리</div>
+      <div style="font-size:13px;color:var(--ink-mute);line-height:1.6">상세 정보 업데이트 예정</div>
     </div>
     <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);padding:30px 30px 30px">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
-        <span style="background:var(--badge-bg);color:var(--badge-ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius)">시니어 레지던스</span>
-        <span style="font-size:12px;color:var(--ink-mute);font-weight:600">입주 2025</span>
+        <span style="background:var(--badge-bg);color:var(--badge-ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius)">분양중</span>
       </div>
-      <div style="font-size:21px;font-weight:800;color:var(--ink);margin-bottom:6px">VL 르웨스트</div>
-      <div style="font-size:13px;color:var(--ink-mute);margin-bottom:26px;line-height:1.6">롯데호텔 프리미엄 시니어 레지던스<br>서울 강서 마곡</div>
-      <div style="display:flex;gap:14px;padding-top:22px;border-top:1px solid var(--hairline)">
-        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">규모</div><div style="font-size:15px;font-weight:700;color:var(--ink)">지하6~지상15층</div></div>
-        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">세대수</div><div style="font-size:15px;font-weight:700;color:var(--ink)">총 810세대</div></div>
-      </div>
-    </div>
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);padding:30px 30px 30px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
-        <span style="background:#eaf3ec;color:#2c7a4b;font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius)">세대공존형</span>
-        <span style="font-size:12px;color:var(--ink-mute);font-weight:600">런칭</span>
-      </div>
-      <div style="font-size:21px;font-weight:800;color:var(--ink);margin-bottom:6px">백운호수 푸르지오 숲속의 아침</div>
-      <div style="font-size:13px;color:var(--ink-mute);margin-bottom:26px;line-height:1.6">3대 세대공존형 주거단지<br>경기 의왕 백운밸리</div>
-      <div style="display:flex;gap:14px;padding-top:22px;border-top:1px solid var(--hairline)">
-        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">구성</div><div style="font-size:15px;font-weight:700;color:var(--ink)">1·2단지</div></div>
-        <div style="flex:1"><div style="font-size:11px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">세대수</div><div style="font-size:15px;font-weight:700;color:var(--ink)">총 1,378세대</div></div>
-      </div>
+      <div style="font-size:21px;font-weight:800;color:var(--ink);margin-bottom:6px">망상 더씨뷰</div>
+      <div style="font-size:13px;color:var(--ink-mute);line-height:1.6">강원 동해 망상</div>
     </div>
   </div>
 </section>
@@ -266,24 +260,91 @@
   </div>
 </div>
 
+<!-- ===== 협력사 상세 모달 ===== -->
+<div id="partner-modal" style="display:none;position:fixed;inset:0;background:rgba(8,16,25,.62);z-index:50;align-items:center;justify-content:center;padding:24px">
+  <div style="background:#fff;max-width:640px;width:100%;max-height:80vh;overflow:auto;border-radius:6px;padding:38px 36px;color:#122a41">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+      <div id="pm-field" style="font-size:13px;color:#8b95a1;font-weight:600;letter-spacing:.06em"></div>
+      <button id="pm-close" type="button" style="border:none;background:none;font-size:24px;line-height:1;color:#8b95a1;cursor:pointer;padding:4px">&times;</button>
+    </div>
+    <div id="pm-name" style="font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:18px"></div>
+    <div id="pm-story" style="font-size:16px;line-height:1.9;color:#4a545f"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
 <script>
 (function(){
   "use strict";
 
-  /* ---------- 협력사 로고 (글로벌 브랜드·파트너) ---------- */
-  var partners = document.getElementById('partners');
-  var partnerNames = [
-    'BANYAN TREE', 'ANGSANA', 'CASSIA', 'CLUB MED',
-    'AMAN', 'MARRIOTT', 'HILTON', 'HYATT',
-    'IHG', 'ACCOR', 'SIGNIEL', 'SONO'
+  if (window.gsap && window.Flip) { gsap.registerPlugin(Flip); }
+
+  /* ---------- 협력사 카드 캐러셀 (사진·스토리는 자산 확보 후 교체) ---------- */
+  var partnerData = [
+    { name:'반얀트리 그룹', field:'글로벌 호텔·리조트 브랜드', story:'파트너 스토리 업데이트 예정' },
+    { name:'희림종합건축사사무소', field:'건축 설계', story:'파트너 스토리 업데이트 예정' },
+    { name:'Design Fever', field:'마스터플랜', story:'파트너 스토리 업데이트 예정' },
+    { name:'TSS soft', field:'운영 시스템', story:'파트너 스토리 업데이트 예정' },
+    { name:'IZM', field:'인테리어 시공', story:'파트너 스토리 업데이트 예정' },
+    { name:'Weplan', field:'개발', story:'파트너 스토리 업데이트 예정' },
+    { name:'Verygood Tour', field:'여행', story:'파트너 스토리 업데이트 예정' },
+    { name:'SKA', field:'호텔 운영', story:'파트너 스토리 업데이트 예정' },
+    { name:'Genieworks', field:'시스템 개발', story:'파트너 스토리 업데이트 예정' },
+    { name:'Seojong Global', field:'기술 지원', story:'파트너 스토리 업데이트 예정' }
   ];
-  var logoStyle = 'height:64px;background:var(--logo-bg);border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font:600 12px "Pretendard",system-ui,sans-serif;color:var(--ink-soft);letter-spacing:.06em;text-align:center;padding:0 8px';
-  partnerNames.forEach(function(nm){
-    var cell = document.createElement('div');
-    cell.setAttribute('style', logoStyle);
-    cell.textContent = nm;
-    partners.appendChild(cell);
+  var track = document.getElementById('partner-track');
+  track.innerHTML = partnerData.map(function(p, i){
+    return '<div class="partner-card" data-pidx="' + i + '">' +
+        '<div style="height:170px;background:repeating-linear-gradient(135deg,var(--stripe1),var(--stripe1) 11px,var(--stripe2) 11px,var(--stripe2) 22px);display:flex;align-items:center;justify-content:center">' +
+          '<span style="width:74px;height:74px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:var(--accent-ink)">' + esc(p.name.charAt(0)) + '</span>' +
+        '</div>' +
+        '<div style="padding:20px 22px 24px">' +
+          '<div style="font-size:12px;color:var(--ink-mute);font-weight:600;margin-bottom:6px">' + esc(p.field) + '</div>' +
+          '<div style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em">' + esc(p.name) + '</div>' +
+          '<div style="font-size:13px;color:var(--ink-soft);line-height:1.6">' + esc(p.story) + '</div>' +
+        '</div>' +
+      '</div>';
+  }).join('');
+
+  var pcards = Array.prototype.slice.call(track.children);
+  function revealPartners(){
+    pcards.forEach(function(c, i){ setTimeout(function(){ c.classList.add('pshow'); }, i * 90); });
+  }
+  if (typeof IntersectionObserver === 'undefined') {
+    revealPartners();
+  } else {
+    var pio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { revealPartners(); pio.disconnect(); } });
+    }, { threshold: 0.15 });
+    pio.observe(track);
+  }
+
+  var prevB = document.getElementById('partner-prev');
+  var nextB = document.getElementById('partner-next');
+  function updateArrows(){
+    prevB.disabled = track.scrollLeft <= 2;
+    nextB.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+  }
+  prevB.addEventListener('click', function(){ track.scrollBy({ left: -318, behavior: 'smooth' }); });
+  nextB.addEventListener('click', function(){ track.scrollBy({ left: 318, behavior: 'smooth' }); });
+  track.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+
+  var pModal = document.getElementById('partner-modal');
+  track.addEventListener('click', function(ev){
+    var card = ev.target.closest ? ev.target.closest('.partner-card') : null;
+    if (!card) return;
+    var p = partnerData[parseInt(card.getAttribute('data-pidx'), 10)];
+    if (!p) return;
+    document.getElementById('pm-field').textContent = p.field;
+    document.getElementById('pm-name').textContent = p.name;
+    document.getElementById('pm-story').textContent = p.story;
+    pModal.style.display = 'flex';
   });
+  document.getElementById('pm-close').addEventListener('click', function(){ pModal.style.display = 'none'; });
+  pModal.addEventListener('click', function(ev){ if (ev.target === pModal) pModal.style.display = 'none'; });
 
   /* ---------- 수행 프로젝트: 탭 필터 ---------- */
   var allProjects = [
@@ -295,7 +356,9 @@
     { title:'신라 모노그램 호텔',     cat:'호텔',   meta:'브랜드 런칭',           img:'SHILLA' },
     { title:'카스카디아',            cat:'골프장', meta:'회원권 분양',           img:'CASCADIA' },
     { title:'썬밸리',                cat:'골프장', meta:'회원권 분양',           img:'SUN VALLEY' },
-    { title:'벨라45',                cat:'골프장', meta:'회원권 분양',           img:'BELLA45' }
+    { title:'벨라45',                cat:'골프장', meta:'회원권 분양',           img:'BELLA45' },
+    { title:'포웰CC 김해',           cat:'골프장', meta:'회원권 분양 · 경남 김해', img:'POWELL CC' },
+    { title:'남한강 에스파크',        cat:'리조트', meta:'분양 대행',             img:'S-PARK' }
   ];
   var tabs = ['전체','골프장','리조트','호텔'];
   var activeTab = '전체';
@@ -316,31 +379,49 @@
       b.type = 'button';
       b.textContent = t;
       b.setAttribute('style', t === activeTab ? activeTabStyle : baseTab);
-      b.addEventListener('click', function(){ activeTab = t; renderTabs(); renderGrid(); });
+      b.addEventListener('click', function(){ activeTab = t; renderTabs(); applyFilter(); });
       tabsEl.appendChild(b);
     });
   }
 
+  function cardHTML(p){
+    return '<div class="proj-card" data-cat="' + esc(p.cat) + '" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);overflow:hidden">' +
+        '<div style="height:172px;background:repeating-linear-gradient(135deg,var(--stripe1),var(--stripe1) 11px,var(--stripe2) 11px,var(--stripe2) 22px);display:flex;align-items:center;justify-content:center;position:relative">' +
+          '<span style="font:600 11px ui-monospace,monospace;color:var(--ink-mute);letter-spacing:.1em">' + esc(p.img) + '</span>' +
+          '<span style="position:absolute;top:12px;left:12px;background:#122a41;color:#fff;font-size:11px;font-weight:600;padding:4px 11px;border-radius:var(--radius)">' + esc(p.cat) + '</span>' +
+        '</div>' +
+        '<div style="padding:22px 22px 24px">' +
+          '<div style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:9px;letter-spacing:-.01em">' + esc(p.title) + '</div>' +
+          '<div style="font-size:13px;color:var(--ink-mute)">' + esc(p.meta) + '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
   function renderGrid(){
-    var list = activeTab === '전체' ? allProjects : allProjects.filter(function(p){ return p.cat === activeTab; });
-    gridEl.innerHTML = list.map(function(p){
-      return '<div class="proj-card" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);overflow:hidden">' +
-          '<div style="height:172px;background:repeating-linear-gradient(135deg,var(--stripe1),var(--stripe1) 11px,var(--stripe2) 11px,var(--stripe2) 22px);display:flex;align-items:center;justify-content:center;position:relative">' +
-            '<span style="font:600 11px ui-monospace,monospace;color:var(--ink-mute);letter-spacing:.1em">' + esc(p.img) + '</span>' +
-            '<span style="position:absolute;top:12px;left:12px;background:#122a41;color:#fff;font-size:11px;font-weight:600;padding:4px 11px;border-radius:var(--radius)">' + esc(p.cat) + '</span>' +
-          '</div>' +
-          '<div style="padding:22px 22px 24px">' +
-            '<div style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:9px;letter-spacing:-.01em">' + esc(p.title) + '</div>' +
-            '<div style="font-size:13px;color:var(--ink-mute)">' + esc(p.meta) + '</div>' +
-          '</div>' +
-        '</div>';
-    }).join('');
+    gridEl.innerHTML = allProjects.map(cardHTML).join('');
+  }
+
+  /* 탭 전환 시 GSAP Flip으로 카드가 자리를 찾아가는 애니메이션 (미로드 시 즉시 전환) */
+  function applyFilter(){
+    var cards = Array.prototype.slice.call(gridEl.children);
+    var hasFlip = window.gsap && window.Flip;
+    var state = hasFlip ? Flip.getState(cards) : null;
+    cards.forEach(function(c){
+      c.style.display = (activeTab === '전체' || c.getAttribute('data-cat') === activeTab) ? '' : 'none';
+    });
+    if (hasFlip) {
+      Flip.from(state, {
+        duration: 0.55, scale: true, ease: 'power1.inOut', stagger: 0.04, absolute: true,
+        onEnter: function(els){ return gsap.fromTo(els, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5 }); },
+        onLeave: function(els){ return gsap.to(els, { opacity: 0, scale: 0.85, duration: 0.35 }); }
+      });
+    }
   }
   renderTabs();
   renderGrid();
 
   /* ---------- 주요 실적: 카운트업 (뷰포트 진입 시) ---------- */
-  var targets = { a:1.2, b:48, c:130, d:98.7 };
+  var targets = { a:20, b:27, c:17, d:15 };
   var els = {
     a: document.querySelector('[data-stat="a"]'),
     b: document.querySelector('[data-stat="b"]'),
@@ -354,10 +435,10 @@
     function tick(now){
       var p = Math.min(1, (now - t0) / dur);
       var e = 1 - Math.pow(1 - p, 3);
-      els.a.textContent = (targets.a * e).toFixed(1);
+      els.a.textContent = Math.round(targets.a * e);
       els.b.textContent = Math.round(targets.b * e);
       els.c.textContent = Math.round(targets.c * e);
-      els.d.textContent = (targets.d * e).toFixed(1);
+      els.d.textContent = Math.round(targets.d * e);
       if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
