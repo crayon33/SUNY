@@ -34,15 +34,19 @@
   .proj-card{transition:box-shadow .2s,transform .2s}
   .proj-card:hover{box-shadow:0 14px 34px rgba(18,42,65,.12);transform:translateY(-3px)}
 
-  /* ===== 협력사 카드 캐러셀 ===== */
-  #partner-track{display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;padding:6px 2px 18px;scrollbar-width:none;-ms-overflow-style:none}
-  #partner-track::-webkit-scrollbar{display:none}
-  .partner-card{flex:none;width:300px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);overflow:hidden;cursor:pointer;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease,box-shadow .2s}
-  .partner-card.pshow{opacity:1;transform:translateY(0)}
-  .partner-card.pshow:hover{box-shadow:0 14px 34px rgba(18,42,65,.12);transform:translateY(-3px)}
-  .pbtn{width:40px;height:40px;border-radius:50%;border:none;background:#122a41;color:#fff;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:opacity .15s,filter .15s}
-  .pbtn:hover{filter:brightness(1.25)}
-  .pbtn:disabled{opacity:.35;cursor:default;filter:none}
+  /* ===== 협력사: 오른쪽으로 느리게 흐르는 무한 캐러셀 ===== */
+  #partner-track{overflow:hidden;padding:6px 0 18px}
+  #partner-inner{display:flex;gap:18px;width:max-content;will-change:transform}
+  .partner-card{flex:none;width:300px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);overflow:hidden;cursor:pointer;transition:box-shadow .2s,transform .2s}
+  .partner-card:hover{box-shadow:0 14px 34px rgba(18,42,65,.12);transform:translateY(-3px)}
+
+  /* ===== 수행 프로젝트: 세로 컬럼 무한 스크롤 ===== */
+  #proj-columns{display:flex;gap:22px;max-height:740px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
+  .proj-col{flex:1;min-width:0}
+  .proj-col-inner{display:flex;flex-direction:column;gap:22px;padding-bottom:22px;will-change:transform;animation:projScroll 40s linear infinite}
+  .proj-col-inner:hover{animation-play-state:paused}
+  @keyframes projScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+  @media (max-width:1100px){.proj-col:nth-child(3){display:none}}
   input:focus,select:focus,textarea:focus{border-color:var(--accent) !important;box-shadow:0 0 0 3px rgba(63,127,196,.12)}
 
   /* ===== Responsive ===== */
@@ -51,6 +55,8 @@
     .stat-cell{border-left:none !important;padding:0 !important;border-top:1px solid rgba(255,255,255,.14);padding-top:22px !important}
     .stat-cell:nth-child(-n+2){border-top:none;padding-top:0 !important}
     :root{--stat-size:52px}
+    .proj-col:nth-child(2){display:none}
+    #proj-columns{max-height:620px}
   }
 </style>
 </head>
@@ -139,13 +145,7 @@
     <h2 style="font-size:14px;letter-spacing:.16em;font-weight:700;color:var(--head-accent);margin:0">협력사 · PARTNERS</h2>
   </div>
   <p style="font-size:16px;color:var(--ink-soft);margin:0 0 24px;max-width:620px;line-height:1.7">반얀트리 그룹, 희림종합건축사사무소 등 국내외 건설·설계·운영·금융 파트너와 글로벌 호텔·리조트 브랜드가 함께하는 신뢰 기반의 네트워크를 구축하고 있습니다.</p>
-  <div style="position:relative">
-    <div id="partner-track"></div>
-    <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:4px">
-      <button id="partner-prev" class="pbtn" type="button" aria-label="이전">&#8592;</button>
-      <button id="partner-next" class="pbtn" type="button" aria-label="다음">&#8594;</button>
-    </div>
-  </div>
+  <div id="partner-track"></div>
 </section>
 
 <!-- ===== 프로젝트 수행 (완료, 필터) ===== -->
@@ -158,9 +158,8 @@
       </div>
       <div style="font-size:clamp(22px,4.5vw,34px);font-weight:800;color:var(--ink);letter-spacing:-.02em">대표 수행 프로젝트</div>
     </div>
-    <div id="proj-tabs" style="display:flex;gap:10px;flex-wrap:wrap"></div>
   </div>
-  <div id="proj-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px"></div>
+  <div id="proj-columns"></div>
 </section>
 
 <!-- ===== 진행중인 프로젝트 (브랜드 런칭) ===== -->
@@ -272,15 +271,11 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
 <script>
 (function(){
   "use strict";
 
-  if (window.gsap && window.Flip) { gsap.registerPlugin(Flip); }
-
-  /* ---------- 협력사 카드 캐러셀 (사진·스토리는 자산 확보 후 교체) ---------- */
+  /* ---------- 협력사: 오른쪽으로 흐르는 무한 캐러셀 (사진·스토리는 자산 확보 후 교체) ---------- */
   var partnerData = [
     { name:'반얀트리 그룹', field:'글로벌 호텔·리조트 브랜드', story:'파트너 스토리 업데이트 예정' },
     { name:'트룬', field:'글로벌 골프장 운영·매니지먼트', story:'파트너 스토리 업데이트 예정' },
@@ -294,8 +289,12 @@
     { name:'Genieworks', field:'시스템 개발', story:'파트너 스토리 업데이트 예정' },
     { name:'Seojong Global', field:'기술 지원', story:'파트너 스토리 업데이트 예정' }
   ];
+  /* 흐름 속도: px/초. 숫자만 바꾸면 속도 조절됨 (클수록 빠름) */
+  var PARTNER_SPEED = 26;
+  var PARTNER_GAP = 18; /* CSS #partner-inner gap과 동일해야 함 */
+
   var track = document.getElementById('partner-track');
-  track.innerHTML = partnerData.map(function(p, i){
+  function partnerCardHTML(p, i){
     return '<div class="partner-card" data-pidx="' + i + '">' +
         '<div style="height:170px;background:repeating-linear-gradient(135deg,var(--stripe1),var(--stripe1) 11px,var(--stripe2) 11px,var(--stripe2) 22px);display:flex;align-items:center;justify-content:center">' +
           '<span style="width:74px;height:74px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:var(--accent-ink)">' + esc(p.name.charAt(0)) + '</span>' +
@@ -306,32 +305,30 @@
           '<div style="font-size:13px;color:var(--ink-soft);line-height:1.6">' + esc(p.story) + '</div>' +
         '</div>' +
       '</div>';
-  }).join('');
+  }
+  /* 동일 목록을 2번 이어붙여 절반만큼 이동하면 처음과 같아지는 무한 루프 구성 */
+  var setHTML = partnerData.map(partnerCardHTML).join('');
+  track.innerHTML = '<div id="partner-inner">' + setHTML + setHTML + '</div>';
+  var pInner = document.getElementById('partner-inner');
 
-  var pcards = Array.prototype.slice.call(track.children);
-  function revealPartners(){
-    pcards.forEach(function(c, i){ setTimeout(function(){ c.classList.add('pshow'); }, i * 90); });
+  var pOffset = 0, pPaused = false, pLast = null, pPeriod = 0;
+  function measurePartner(){ pPeriod = (pInner.scrollWidth + PARTNER_GAP) / 2; }
+  measurePartner();
+  window.addEventListener('resize', measurePartner);
+  function partnerStep(now){
+    if (pLast !== null && !pPaused && pPeriod > 0) {
+      pOffset += (now - pLast) / 1000 * PARTNER_SPEED;
+      if (pOffset >= pPeriod) pOffset -= pPeriod;
+      /* 오른쪽 방향: 한 세트만큼 왼쪽에서 시작해 0을 향해 이동 */
+      pInner.style.transform = 'translateX(' + (pOffset - pPeriod) + 'px)';
+    }
+    pLast = now;
+    requestAnimationFrame(partnerStep);
   }
-  if (typeof IntersectionObserver === 'undefined') {
-    revealPartners();
-  } else {
-    var pio = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if (en.isIntersecting) { revealPartners(); pio.disconnect(); } });
-    }, { threshold: 0.15 });
-    pio.observe(track);
-  }
-
-  var prevB = document.getElementById('partner-prev');
-  var nextB = document.getElementById('partner-next');
-  function updateArrows(){
-    prevB.disabled = track.scrollLeft <= 2;
-    nextB.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
-  }
-  prevB.addEventListener('click', function(){ track.scrollBy({ left: -318, behavior: 'smooth' }); });
-  nextB.addEventListener('click', function(){ track.scrollBy({ left: 318, behavior: 'smooth' }); });
-  track.addEventListener('scroll', updateArrows);
-  window.addEventListener('resize', updateArrows);
-  updateArrows();
+  requestAnimationFrame(partnerStep);
+  /* 마우스를 올리면 일시 정지 */
+  track.addEventListener('mouseenter', function(){ pPaused = true; });
+  track.addEventListener('mouseleave', function(){ pPaused = false; });
 
   var pModal = document.getElementById('partner-modal');
   track.addEventListener('click', function(ev){
@@ -361,29 +358,11 @@
     { title:'포웰CC 김해',           cat:'골프장', meta:'회원권 분양 · 경남 김해', img:'POWELL CC' },
     { title:'남한강 에스파크',        cat:'골프장', meta:'분양 대행',             img:'S-PARK' }
   ];
-  var tabs = ['전체','골프장','리조트','호텔'];
-  var activeTab = '전체';
-  var tabsEl = document.getElementById('proj-tabs');
-  var gridEl = document.getElementById('proj-grid');
-
-  var stem = 'padding:10px 22px;font-size:14px;font-weight:600;border-radius:var(--radius);cursor:pointer;font-family:inherit;white-space:nowrap;';
-  var baseTab = stem + 'border:1px solid var(--border);background:var(--card);color:var(--ink-soft)';
-  var activeTabStyle = stem + 'border:1px solid var(--accent);background:var(--accent);color:#fff';
+  /* 컬럼별 한 바퀴 도는 시간(초). 숫자만 바꾸면 속도 조절됨 (클수록 느림).
+     컬럼마다 다르게 두면 프롬프트 데모처럼 서로 어긋나며 흐름 */
+  var PROJ_DURATIONS = [36, 46, 41];
 
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-
-  function renderTabs(){
-    tabsEl.innerHTML = '';
-    tabs.forEach(function(t){
-      var b = document.createElement('button');
-      b.className = 'tab-btn';
-      b.type = 'button';
-      b.textContent = t;
-      b.setAttribute('style', t === activeTab ? activeTabStyle : baseTab);
-      b.addEventListener('click', function(){ activeTab = t; renderTabs(); applyFilter(); });
-      tabsEl.appendChild(b);
-    });
-  }
 
   function cardHTML(p){
     return '<div class="proj-card" data-cat="' + esc(p.cat) + '" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-card);overflow:hidden">' +
@@ -398,28 +377,17 @@
       '</div>';
   }
 
-  function renderGrid(){
-    gridEl.innerHTML = allProjects.map(cardHTML).join('');
-  }
-
-  /* 탭 전환 시 GSAP Flip으로 카드가 자리를 찾아가는 애니메이션 (미로드 시 즉시 전환) */
-  function applyFilter(){
-    var cards = Array.prototype.slice.call(gridEl.children);
-    var hasFlip = window.gsap && window.Flip;
-    var state = hasFlip ? Flip.getState(cards) : null;
-    cards.forEach(function(c){
-      c.style.display = (activeTab === '전체' || c.getAttribute('data-cat') === activeTab) ? '' : 'none';
-    });
-    if (hasFlip) {
-      Flip.from(state, {
-        duration: 0.55, scale: true, ease: 'power1.inOut', stagger: 0.04, absolute: true,
-        onEnter: function(els){ return gsap.fromTo(els, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5 }); },
-        onLeave: function(els){ return gsap.to(els, { opacity: 0, scale: 0.85, duration: 0.35 }); }
-      });
-    }
-  }
-  renderTabs();
-  renderGrid();
+  /* 프로젝트를 3개 컬럼에 번갈아 배분하고, 각 컬럼 내용을 2번 이어붙여
+     위로 무한 스크롤 (translateY 0 → -50% CSS 애니메이션, 호버 시 정지) */
+  var colsEl = document.getElementById('proj-columns');
+  var cols = [[], [], []];
+  allProjects.forEach(function(p, i){ cols[i % 3].push(p); });
+  colsEl.innerHTML = cols.map(function(list, c){
+    var setHTML = list.map(cardHTML).join('');
+    return '<div class="proj-col">' +
+        '<div class="proj-col-inner" style="animation-duration:' + PROJ_DURATIONS[c] + 's">' + setHTML + setHTML + '</div>' +
+      '</div>';
+  }).join('');
 
   /* ---------- 주요 실적: 카운트업 (뷰포트 진입 시) ---------- */
   var targets = { a:20, b:27, c:17, d:15 };
