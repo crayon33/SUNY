@@ -27,10 +27,9 @@
   .foot-link{cursor:pointer;transition:color .15s}
   .foot-link:hover{color:#fff}
   .tab-btn{transition:all .15s}
-  .cta-solid{transition:filter .15s,transform .15s}
-  .cta-solid:hover{filter:brightness(1.08)}
-  .cta-outline{transition:background .15s}
-  .cta-outline:hover{background:rgba(255,255,255,.08)}
+  /* 히어로 스크롤 유도 라인 (시안 ④) */
+  .hero-scroll-line{display:block;width:1px;height:44px;background:rgba(255,255,255,.45);animation:heroScroll 2.2s ease-in-out infinite}
+  @keyframes heroScroll{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
   .proj-card{transition:box-shadow .2s,transform .2s}
   .proj-card:hover{box-shadow:0 14px 34px rgba(18,42,65,.12);transform:translateY(-3px)}
 
@@ -81,10 +80,10 @@
     <div style="font-size:13px;letter-spacing:.2em;color:var(--accent-lite);font-weight:600;margin-bottom:28px">FAITH AND CONVICTION · SINCE 2011</div>
     <h1 style="font-size:clamp(29px,7vw,var(--h1));line-height:1.16;font-weight:800;margin:0;letter-spacing:-.025em">당신의 선택이 옳았음을,<br>결과로 증명하겠습니다</h1>
     <p style="font-size:clamp(15px,4.2vw,19px);line-height:1.7;color:rgba(255,255,255,.7);margin:28px 0 36px;font-weight:400">골프장 · 리조트 · 호텔 · 시니어 레지던스<br>개발부터 분양까지, 전 과정을 함께하는 레저 부동산 파트너입니다.</p>
-    <div style="display:flex;gap:14px;justify-content:var(--hero-just);flex-wrap:wrap">
-      <a href="#contact" class="cta-solid" style="background:var(--btn-bg);color:var(--btn-fg);border:1px solid var(--btn-bd);padding:15px 32px;font-size:15px;font-weight:700;border-radius:var(--radius)">프로젝트 상담</a>
-      <a href="#completed" class="cta-outline" style="border:1px solid rgba(255,255,255,.35);color:#fff;padding:15px 32px;font-size:15px;font-weight:600;border-radius:var(--radius)">수행 프로젝트</a>
-    </div>
+    <a href="#about" aria-label="아래로 스크롤" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:14px">
+      <span style="font-size:11px;letter-spacing:.26em;color:rgba(255,255,255,.4);font-weight:600">SCROLL</span>
+      <span class="hero-scroll-line"></span>
+    </a>
   </div>
 </header>
 
